@@ -63,7 +63,7 @@ array.filter(callback[, thisArg])
 let arr = [1, 2, 3, 4, 5] ;
 let newArr = arr.filter( ( currentValue, index, array ) => {
 	// 3보다 큰 숫자일 경우만 가져온다.
-	return currentValue > 3 ;	
+	return currentValue > 3 ;
 } ) ;
 ```
 
@@ -72,7 +72,7 @@ let newArr = arr.filter( ( currentValue, index, array ) => {
 배열 전체를 돌며 배열의 요소에 인자로 전달한 함수를 실행한다.
 
 ```
-array.forEach(callback[, thisArg]) 
+array.forEach(callback[, thisArg])
 ```
 
 ### 인자
@@ -81,14 +81,14 @@ array.forEach(callback[, thisArg])
 	- currentValue : 현재 처리 중인 요소
 	- index : 현재 처리 중인 요소의 인덱스
 	- array : 해당 배열 전체
-- thisArg : callback을 실행할 때 this로 적용할 값 ( 선택 사항 ) 
+- thisArg : callback을 실행할 때 this로 적용할 값 ( 선택 사항 )
 
 ## map
 
 배열의 모든 요소에 인자로 전달한 함수를 실행하고 그 결과를 모아서 새로운 배열을 반환한다.
 
 ```
-array.map(callback[, thisArg]) ; 
+array.map(callback[, thisArg]) ;
 ```
 
 ### 인자
@@ -108,7 +108,7 @@ let newArr = arr.map( item => {
 } ) ;
 console.log( newArr ) ;
 // 결과 : [false , false, false, true, true]
-``` 
+```
 
 ## reduce
 
@@ -164,4 +164,57 @@ let result = [1, 2, 3, 4, 5].some(function( currentValue, index, array){
 
 console.log( 'result : ', result ) ;
 // result : true
+```
+
+## slice
+
+배열 요소에서 특정 부분을 추출해서 새로운 배열 객체로 반환한다.
+원본배열은 수정되지 않는다.
+
+```
+array.slice()
+array.slice(begin)
+array.slice(begin, end)
+```
+
+### 인자
+
+- begin : 추출 시작점의 인덱스번호(0부터시작), 음수 인덱스는 배열의 끝에서부터의 길이를 나타낸다. begin이 undefined인 경우에는 0번 인덱스부터 slice한다.
+- end : 추출을 종료할 인덱스번호, 인덱스를 제외하고 추출한다(인덱스번호 앞까지의 요소들을 추출), 음수 인덱스는 배열의 끝에서부터의 길이를 나타낸다. end가 생략되면 slice는 배열의 끝까지(array.length) 추출한다.
+
+### 예제
+
+```
+let array = ['A', 'B', 'C', 'D', 'E', 'F'] ;
+array.slice(0, 2) ;		// ['A' ,'B']
+```
+
+## splice
+
+배열에 있는 요소를 삭제하거나 새로운 요소를 추가한다.
+
+```
+array.splice(start)
+array.splice(start, deleteCount)
+array.splice(start, deleteCount, item1, item2, ...)
+```
+
+### 인자
+
+- start : 배열의 변경을 시작하는 인덱스이다. 0부터 시작한다. 만약 배열의 길이보다 길면 실제 시작 인덱스는 배열의 길이로 설정된다. 음수의 경우, 배열의 끝에서 부터 요소를 세어나간다. 그 값의 절대값이 배열의 길이보다 큰 경우 0으로 설정된다.
+- deleteCount : 배열에서 제거를 할 요소의 수입니다. 0일 경우 아무런 요소도 제거 되지 않는다. 이 경우, 최소한 하나의 새요소를 특정해줘야 한다. 만약 deleteCount가 start에서 부터의 남은 요소 수보다 많을 경우, 남은 요소를 모두 제거한다.
+- itemN : 배열에 추가될 요소이다. 생략 시, splice()는 요소를 삭제만 하게된다.
+
+### 예제
+
+```
+let name = ['Mike', 'John', 'Bob', 'Jane'] ;
+
+// 요소 추가
+name.splice(2, 0, 'Sam') ;
+// [ 'Mike', 'John', 'Sam', 'Bob', 'Jane' ]
+
+// 요소 삭제
+name.splice(0, 2) ;
+// [ 'Sam', 'Bob', 'Jane' ]
 ```
