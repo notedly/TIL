@@ -218,3 +218,58 @@ name.splice(2, 0, 'Sam') ;
 name.splice(0, 2) ;
 // [ 'Sam', 'Bob', 'Jane' ]
 ```
+
+## fill
+
+인자로 전달한 시작 위치부터 끝 인덱스까지 지정한 값으로 배열 요소들을 채운다.
+
+```
+array.fill( value, start, end )
+```
+
+### 인자
+
+- value : 배열을 채우기 위한 값
+- start : 채우기를 시작할 시작 인덱스, 기본 값은 0(선택사항)
+- end : 끝 인덱스, 기본 값은 배열의 길이(선택사항)
+
+### 예제
+
+```
+let arr = [ 1, 2, 3, 4, 5, 6, 7 ] ;
+
+arr.fill( 0, 1, 3 ) ;
+
+console.log( arr ) ;
+// [ 1, 0, 0, 4, 5, 6, 7 ]
+```
+
+## from
+
+유사 배열 or 반복 가능한 객체로부터 새 배열을 만든다.
+
+```
+Array.from( arrayLike[, mapFnn[, thisArg]] )
+```
+
+### 인자
+
+- arrayLike : 배열로 변환할 유사 배열 or 반복 가능한 객체
+- mapFn : 배열의 모든 요소에 호출 할 Map함수(선택사항)
+- thisArg : mapFn 실행 시에 this로 사용할 값
+
+### 예제
+
+```
+let foo = Array.from('foo') ;
+console.log( foo ) ;
+// [ 'f', 'o', 'o' ]
+
+let num = Array.from([1, 2, 3], x => x + x) ;
+console.log( num ) ;
+// [ 2, 4, 6 ]
+
+let arrNum = Array.from( { length : 5 }, (v, k) => k ) ;
+console.log( arrNum ) ;
+// [ 0, 1, 2, 3, 4 ]
+```
