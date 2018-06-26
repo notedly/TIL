@@ -273,3 +273,91 @@ let arrNum = Array.from( { length : 5 }, (v, k) => k ) ;
 console.log( arrNum ) ;
 // [ 0, 1, 2, 3, 4 ]
 ```
+
+## includes
+
+배열에 특정 요소가 포함되어 있는지 여부를 확인한다.
+
+```
+array.includes( searchElement, fromIndex )
+```
+
+### 인자
+
+- searchElement : 검색할 요소
+- fromIndex : 검색을 시작할 위치이다. 음수 값은 array.length + fromIndex, 기본 값은 0 이다.
+
+### 반환값
+
+boolean( true or false )
+
+### 예시
+
+```
+let array = [ 1, 2, 3, 4, 5 ] ;
+array.includes(4) ;	// true
+array.includes(6) ;	// true
+array.includes(2, 2) ;	// false
+array.includes(5, -1) ;	// true
+```
+
+## find
+
+콜백으로 전달받은 함수가 요구하는 조건에 만족하는 첫번째 값 하나를 반환한다. 그렇지 않으면 undefined를 반환한다.
+
+```
+array.find( callback[, thisArg] )
+```
+
+### 인자
+
+- callback : 배열의 각 값에 대해서 실행시킬 함수이다. 아래 세 인자값을 받는다.
+	- element : 현재 처리 중인 요소
+	- index : 현재 처리 중인 요소의 인덱스
+	- array : find메소드가 적용되는 배열 전체
+- thisArg : callback을 실행할 때 this로 적용할 값 ( 선택 사항 )
+
+### 반환값
+
+element가 테스트를 통과하면 배열 안의 값을 반환, 값이 없다면 undefinedf를 반환
+
+### 예시
+
+```
+let array = [ 1, 2, 3, 4, 5 ] ;
+let find = array.find(function(element){
+	return element % 2 == 0 ;
+}) ;
+console.log( find ) ;	// 2
+```
+
+## findIndex
+
+테스트함수를 만족하는 배열의 첫번째 요소에 대한 인덱스를 반환한다. 그렇지 않으면 -1을 반환한다.
+
+```
+array.findIndex( callback[, thisArg] )
+```
+
+### 인자
+
+- callback : 배열의 각 값에 대해서 실행시킬 함수이다. 아래 세 인자값을 받는다.
+	- element : 현재 처리 중인 요소
+	- index : 현재 처리 중인 요소의 인덱스
+	- array : find메소드가 적용되는 배열 전체
+- thisArg : findIndex을 실행할 때 this로 적용할 값 ( 선택 사항 )
+
+### 반환값
+
+요소가 테스트를 통과하면 해당 요소의 인덱스를 반환하고, 그렇지 않으면 -1을 반환한다.
+
+### 예시
+
+```
+let array = [ 1, 2, 3, 4, 5 ] ;
+let findIdx = array.findIndex(function(element){
+	return element > 1 ;
+}) ;
+console.log( findIdx ) ;	// 1
+```
+
