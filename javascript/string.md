@@ -75,3 +75,46 @@ string.repeat( count ) ;
 ```
 'abc'.repeat( 3 ) ;		// 'abcabcabc';
 ```
+
+## charAt
+
+문자열에서 특정 문자를 반환한다.
+
+### 문법
+
+```
+string.charAt( index ) ;
+```
+
+### 인자
+
+- index : 0부터 시작하며, 문자열 길이보다 1이 적은 값(정수)을 전달할 수 있다.
+
+### 예제
+
+```
+let str = 'Hello' ;
+str.charAt( 2 ) ;		// e;
+```
+
+## concat
+
+문자열을 결합하고, 결합한 새로운 문자열을 반환한다.
+
+### 문법
+
+```
+string.concat( string2, string3[,..., stringN] )
+```
+
+### 인자
+
+- string2...stringN : 결합하려고 하는 문자열이다.
+
+### 예제
+
+```
+let str = 'Hello, ' ;
+let result = str.concat('world', ' JS') ;
+console.log( result ) ;		// 'Hello, world JS'
+```
