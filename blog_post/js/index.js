@@ -39,7 +39,7 @@ function ìsZeroBalanced(n){
 function twins(myArray){
 	return myArray.every((item, idx) => myArray.filter((item) => myArray[idx] == item ).length == 2 ) ;
 }
-// console.log( twins([2,16,2,17,2,16]) ) ;
+console.log( '###################### :', twins([2,16,2,17,2,16]) ) ;
 
 /* Possiblities Array */
 /*
@@ -54,7 +54,7 @@ function isAllPossibilities(x){
 
 }
 
-// console.log( isAllPossibilities([0, 1,5,6]) ) ;
+console.log( '###################### :', isAllPossibilities([0, 1,5,6]) ) ;
 
 
 let arrNum2 = [ 2, 4, 6, 7, 10 ] ;

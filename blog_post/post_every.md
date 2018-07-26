@@ -1,15 +1,14 @@
 # 알아두면 쓸모 있는 배열 메서드 02. every
 
 이번에 알아 볼 메서드는 every() 입니다.
-every 메서드는 배열의 모든 요소가 함수로 제공한 테스트에 통과하면 true를 반환하고 그렇지 않으면 false를 반환합니다. 다시한번 말하지만 모든 요소가 통과해야합니다.
+every 메서드는 배열의 모든 요소가 함수로 제공한 테스트에 통과하면 true를 반환하고 그렇지 않으면 false를 반환합니다.
 
 ## 기본 문법
 
 `
-array.every( 배열 요소를 테스트할 함수 ) ;
+array.every( 배열의 요소들을 테스트 할 함수 ) ;
 `
-기본 문법은 위와 같습니다.
-여기서 callback 함수의 인자로는 아래의 3가지를 받을 수 있습니다.
+기본 문법은 위와 같으며 테스트 함수의 인자로는 아래의 3가지를 받을 수 있습니다.
 
 `
 callback( currentValue, currentIndex, array )
@@ -26,7 +25,6 @@ callback( currentValue, currentIndex, array )
 
 `
 let arrNum = [ 2, 4, 6, 7, 10 ] ;
-
 let result = arrNum.every(function( crnt, crntIdx, array ){
 	console.log( crntIdx + '번째 요소의 테스트 결과 : ', crnt % 2 == 0 ) ;
 	return crnt % 2 == 0 ;
@@ -41,26 +39,19 @@ let result = arrNum.every(function( crnt, crntIdx, array ){
 
 console.log( 'result : ', result ) ;
 // result :  false
-
 `
 
-
-
-
-
-다른 메서드들과는 조금 다른 구조라서 조금 복잡해 보일 수도 있습니다. 하지만 이해하게 되면 많은 작업들에 사용할 수 있는 유용한 메서드입니다.
-
-마무리로 아래 문제 한번 풀어보시길 바랍니다.
+마무리로 연습 문제 한번 풀어보시길 바랍니다.
 
 ## 연습 문제
 
-배열 arrName에는 영어 이름으로 구성된 요소들이 있습니다.
-이 배열에서 중복된 이름은 하나만 남겨 놓고 나머지 중복 요소는 삭제하는 작업입니다.
-연습 삼아 한번 풀어보시길 바랍니다.
+0 부터 array.length-1 사이의 모든 숫자를 포함하는 경우를 완성형 배열 이라고 해보겠습니다. 아래 배열 arr이 있습니다. 배열 arr이 완성형배열인지 every 메서드를 사용하여 테스트 함수를 만들어보세요.
 
 `
-let arrName = ['bob', 'mike', 'john', 'bob', 'jane', 'mike' ] ;
-// result : [ 'bob', 'mike', 'john', 'jane' ] ;
+let arr = [ 0, 1, 2, 5, 6 ] ;
+function testArr(){
+	// 코드 작성
+}
 `
 
 읽어 주셔서 감사합니다.
