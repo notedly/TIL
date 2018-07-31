@@ -1,23 +1,18 @@
 let arrNum = [ 1, 2, 3, 4, 5 ] ;
 let sum = arrNum.reduce(function( prev, crnt, crntIdx, array ){
-	console.log( prev, crnt ) ;
 	return prev + crnt ;
 }) ;
-console.log( 'sum :', sum ) ;
 
 
 let a = '1' && 123 ;
-console.log( 'a :', a ) ;
 
 let arrName = ['bob', 'mike', 'john', 'bob', 'jane', 'mike' ] ;
-console.log( 'arrName : ', arrName ) ;
 
 let result = arrName.reduce((prev, crnt, crntIdx, array) => {
 	if( prev.indexOf(crnt) < 0 ) prev.push(crnt) ;
 	return prev ;
 }, []) ;
 
-console.log( 'result :', result ) ;
 
 /* Nice Array */
 function isNice(arr){
@@ -33,13 +28,11 @@ function ìsZeroBalanced(n){
 	return n.length > 0 && n.every(e => n.includes(-e)) && n.reduce((a,b) => a+b) === 0 ;
 }
 
-// console.log( ìsZeroBalanced([3]) ) ;
 
 /* Array of twins */
 function twins(myArray){
 	return myArray.every((item, idx) => myArray.filter((item) => myArray[idx] == item ).length == 2 ) ;
 }
-console.log( '###################### :', twins([2,16,2,17,2,16]) ) ;
 
 /* Possiblities Array */
 /*
@@ -54,14 +47,17 @@ function isAllPossibilities(x){
 
 }
 
-console.log( '###################### :', isAllPossibilities([0, 1,5,6]) ) ;
 
 
 let arrNum2 = [ 2, 4, 6, 7, 10 ] ;
 let result2 = arrNum2.every(function( crnt, crntIdx, array ){
-	console.log( crntIdx + '번째 요소의 테스트 결과 : ', crnt % 2 == 0 ) ;
 	return crnt % 2 == 0 ;
 }) ;
 
-console.log( 'result : ', result2 ) ;
 
+let arr = [ 1, 3, 10, 5, 7 ] ;
+let result3 = arr.some(function( crnt, crntIdx, array ){
+	console.log( crntIdx + '번째 요소의 테스트 결과 : ', crnt % 2 == 0 ) ;
+	return crnt % 2 == 0 ;
+}) ;
+console.log( result3 ) ;
